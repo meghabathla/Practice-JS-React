@@ -8,3 +8,7 @@ export default function NotFoundPage() {
     </>
   );
 }
+// question
+// page hiding
+//1 case1- if logged in : hide sign-up pages, show loggedin pages, show public pages
+//case2-if not logged in: show sign-up pages, hide loggedin pages, show public pages
