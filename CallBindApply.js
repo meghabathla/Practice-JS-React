@@ -34,5 +34,5 @@ printName.call(data, "gandhicolony", "mumbai"); //through call
 printName.apply(data, ["gaziabad", "uttarPradesh"]); //through apply
 
 const result = printName.bind(data, "rampuram", "blr");
-console.log(result);
+console.log(typeof result);
 result();

@@ -1,21 +1,22 @@
 function binarySearch(key, arr) {
-  arr = arr.sort();
   let start = 0;
-  let end = arr.length;
-  let mid = Math.ceil((start + end) / 2);
+  let end = arr.length - 1;
 
-  if (key === arr[mid]) return key;
+  while (start <= end) {
+    //4 & 6
+    let mid = Math.floor((start + end) / 2);
+    if (key === arr[mid]) return mid;
 
-  for (let i = 0; i < end; i++) {
     if (key < arr[mid]) {
-      end = mid;
+      end = mid - 1;
     } else {
-      start = mid;
+      start = mid + 1;
     }
   }
-  
+  console.log(`end`);
+  return -1;
 }
-const result = binarySearch(42, [23, 34, 56, 12, 67, 42, 89]);
+const result = binarySearch(12, [12, 23, 34, 42, 56, 67, 89]);
 console.log(result);
 
 //recursively method
