@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Item name="MacBook" price="100000" />
-      <Item name="Headphones" price="10000" />
+      <Item name="Headphones" price="60000" />
       <Item name="Mobile" price="30000" />
       <Cart />
     </>

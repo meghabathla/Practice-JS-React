@@ -1,18 +1,22 @@
-import React, { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import React from "react";
+import { useCart } from "../context/CartContext";
 
 const Item = (props) => {
-  const cart = useContext(CartContext);
+  const cart = useCart();
+  console.log(cart);
   return (
     <div>
       <h4>{props.name}</h4>
       <p>Price: ${props.price}</p>
       <button
         onClick={() => {
-          cart.setItem([...cart.item], {
-            name: props.name,
-            price: props.price,
-          });
+          cart.setItem([
+            ...cart.item,
+            {
+              name: props.name,
+              price: props.price,
+            },
+          ]);
         }}
       >
         Add to cart
