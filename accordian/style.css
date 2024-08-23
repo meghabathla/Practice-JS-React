@@ -1,0 +1,48 @@
+body {
+  background-color: rgb(167, 239, 214);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.accordion {
+  background-color: #c8f0dad2;
+  border-radius: 6px;
+  padding: 40px 10px;
+  width: 40%;
+  margin: 10px 20px;
+}
+
+@media screen and (max-width: 720px) {
+  .accordion {
+    width: 90%;
+  }
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.title {
+  padding: 10px;
+  font-size: large;
+  font-weight: 100;
+}
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0px 20px;
+  box-sizing: border-box;
+}
+.answer.active {
+  max-height: 200px;
+}
+
+.icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.icon.active {
+  transform: rotate(-180deg);
+}
