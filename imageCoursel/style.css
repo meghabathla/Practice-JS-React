@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.image-container {
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+img {
+  box-sizing: border-box;
+  height: 180px;
+}
+
+.btn-after,
+.btn-before {
+  cursor: pointer;
+  padding: 4px;
+  border: 1px solid black;
+  background-color: gray;
+  border-radius: 3px;
+  /* width: fit-content;
+  height: fit-content; */
+}
