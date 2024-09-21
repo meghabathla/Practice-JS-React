@@ -16,45 +16,40 @@ const CheckoutStepper = ({ steps = [] }) => {
     console.log(stepRef.current[0]?.offsetWidth);
     console.log(stepRef.current[steps.length - 1]?.offsetWidth);
   }, [stepRef, steps.length]);
+
   if (!steps.length) {
     return <></>;
   }
 
   const handleNext = () => {
     setCurrentStep((prevStep) => {
-      if (prevStep === steps.length) {
+      if (prevStep === steps.length - 1) {
         setIsComplete(true);
-        return prevStep;
-      } else {
-        return prevStep + 1;
       }
+      return prevStep + 1;
     });
   };
 
   const calculateProgressBarWidth = () => {
-    return ((currentStep - 1) / (steps.length - 1)) * 100;
+    return ((currentStep - 1) / (steps.length - 1)) * 100 + 1;
   };
-
   const ActiveComponent = steps[currentStep - 1]?.component;
 
   return (
     <>
       <div className="stepper">
         {steps.map((step, index) => {
+          const isStepCompleted = currentStep > index + 1 || isComplete;
           return (
             <div
               key={step.name}
               ref={(el) => (stepRef.current[index] = el)}
-              className={`step ${
-                currentStep > index + 1 || isComplete ? "complete" : ""
-              } ${currentStep === index + 1 ? "active" : ""} `}
+              className={`step  ${isStepCompleted ? "complete" : ""} ${
+                currentStep === index + 1 ? "active" : ""
+              } `}
             >
               <div className="step-index">
-                {currentStep > index + 1 || isComplete ? (
-                  <span>&#10003;</span>
-                ) : (
-                  index + 1
-                )}
+                {isStepCompleted ? <span>&#10003;</span> : index + 1}
               </div>
               <div className="step-name">{step.name}</div>
             </div>
