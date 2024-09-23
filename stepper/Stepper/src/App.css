@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px 20px;
   margin-bottom: 20px;
 }
 
@@ -16,7 +15,6 @@
 .step-index {
   width: 30px;
   height: 30px;
-
   border-radius: 50%;
   background-color: rgb(206, 198, 198);
   display: flex;
@@ -42,10 +40,11 @@
 }
 .progress-bar {
   position: absolute;
-  top: 25%;
+  margin-top: 13px;
   left: 0;
   height: 4px;
   background-color: #ccc;
+  z-index: 1;
 }
 .progress {
   height: 100%;
